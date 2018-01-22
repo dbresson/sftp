@@ -7,7 +7,7 @@ action :create do
   directory File.join(node['sftp']['base_dir'], new_resource.username)
 
   user new_resource.username do
-    home new_resource.username
+    home File.join('/', new_resource.username)
     password new_resource.password
   end
 
